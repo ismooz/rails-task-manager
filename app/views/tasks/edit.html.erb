@@ -1,0 +1,11 @@
+<div class="container">
+  <h1>Edit task</h1>
+  <%= simple_form_for(@task) do |f| %>
+  <%= f.input :title %>
+  <%= f.input :details %>
+  <%= f.submit class: "btn btn-primary" %>
+  <%= link_to '<i class="fas fa-trash"></i> - Delete task ?'.html_safe, task_path(@task), method: :delete, data:{ confirm: "Are you sure ?"}, class: "float-right btn btn-light" %>
+<% end %>
+<hr>
+<%= link_to '<i class="fas fa-history"></i> - Back to list'.html_safe, tasks_path %>
+</div>
